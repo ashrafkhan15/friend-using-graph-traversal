@@ -1,0 +1,17 @@
+{
+  "users": [
+    "Alice",
+    "Bob",
+    "Charlie"
+  ],
+  "connections": [
+    {
+      "from": "Alice",
+      "to": "Bob"
+    },
+    {
+      "from": "Bob",
+      "to": "Charlie"
+    }
+  ]
+}

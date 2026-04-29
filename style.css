@@ -1,0 +1,231 @@
+:root {
+    --primary: #3182ce;
+    --primary-dark: #2b6cb0;
+    --secondary: #2d3748;
+    --success: #38a169;
+    --bg-color: #f7fafc;
+    --card-bg: #ffffff;
+    --text-main: #1a202c;
+    --text-muted: #718096;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: var(--secondary);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    grid-template-rows: auto auto;
+    gap: 24px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.input-panel {
+    grid-row: span 2;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 6px;
+    color: var(--secondary);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.flex-row {
+    display: flex;
+    gap: 10px;
+}
+
+.flex-row input {
+    flex: 1;
+}
+
+.connection-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.connection-row select {
+    flex: 1;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+.conn-list {
+    margin-top: 12px;
+    padding-left: 0;
+    list-style: none;
+    max-height: 120px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.conn-list li {
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    background: #fdfdfd;
+}
+
+.conn-list li:last-child {
+    border-bottom: none;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    background: #fcfcfc;
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.results-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.res-box {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    border-top: 4px solid var(--text-muted);
+}
+
+.res-box label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.res-box p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.res-box.highlight {
+    border-top-color: var(--success);
+    background: #f0fff4;
+}
+
+.res-box.highlight p {
+    color: #22543d;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .input-panel {
+        grid-row: auto;
+    }
+}

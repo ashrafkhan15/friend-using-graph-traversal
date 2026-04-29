@@ -1,0 +1,14 @@
+{
+  "name": "friend-suggestion-project",
+  "version": "1.0.0",
+  "description": "Mini Project - Friend Suggestion using Graph Traversal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "compile-c": "gcc main.c -o main.exe"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Suggestion System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Friend Suggestion System</h1>
+            <p class="subtitle">Graph-Based Social Network Analysis</p>
+        </header>
+
+        <main class="main-grid">
+            <!-- STEP 1: Input Section -->
+            <section class="card input-panel">
+                <h3>1. Setup Social Network</h3>
+                
+                <div class="input-group">
+                    <label for="mainUser">Your Name:</label>
+                    <input type="text" id="mainUser" placeholder="e.g. Alice" oninput="updateDropdowns()">
+                </div>
+
+                <div class="input-group">
+                    <label for="numFriends">Number of Friends to Add:</label>
+                    <div class="flex-row">
+                        <input type="number" id="numFriends" min="1" max="9" value="3">
+                        <button onclick="generateFriendInputs()">Set</button>
+                    </div>
+                </div>
+
+                <div id="friendNamesContainer"></div>
+                
+                <div class="input-group mt-20">
+                    <label>Add Connections (Edges):</label>
+                    <div class="connection-row">
+                        <select id="userA" onclick="updateDropdowns()"></select>
+                        <span>&harr;</span>
+                        <select id="userB" onclick="updateDropdowns()"></select>
+                        <button onclick="addConnection()">Add</button>
+                    </div>
+                    <ul id="connList" class="conn-list"></ul>
+                </div>
+
+                <button class="btn-primary" onclick="buildGraph()">Build Social Graph</button>
+            </section>
+
+            <!-- STEP 2: Visualization Section -->
+            <section class="card visual-panel">
+                <h3>2. Graph Visualization</h3>
+                <div class="canvas-container">
+                    <canvas id="graphCanvas" width="500" height="400"></canvas>
+                </div>
+            </section>
+
+            <!-- STEP 3: Results Section -->
+            <section class="card result-panel">
+                <h3>3. Analysis & Suggestions</h3>
+                <button class="btn-primary" id="analyzeBtn" disabled onclick="analyzeGraph()">Find Suggested Friends</button>
+                
+                <div class="results-display">
+                    <div class="res-box">
+                        <label>BFS Traversal:</label>
+                        <p id="bfsRes">-</p>
+                    </div>
+                    <div class="res-box">
+                        <label>DFS Traversal:</label>
+                        <p id="dfsRes">-</p>
+                    </div>
+                    <div class="res-box highlight">
+                        <label>People You May Know:</label>
+                        <p id="suggRes">-</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
